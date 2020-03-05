@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>T-Book</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col *ngFor= "let c of componentes">
+      <ion-card [routerLink]="c.redirectTo">
+        <ion-img [src]="c.image"></ion-img>
+        <ion-card-header >
+          {{c.name}}
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>

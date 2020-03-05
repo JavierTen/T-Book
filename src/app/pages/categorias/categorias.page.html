@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="Atrás" defaultHref="/"> </ion-back-button>
+    </ion-buttons>
+    <ion-title>categorias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ <ion-card *ngFor= "let c of componentes">
+    <ion-card-header>
+      {{c.name}}
+    </ion-card-header>
+ </ion-card>
+ 
+</ion-content>
