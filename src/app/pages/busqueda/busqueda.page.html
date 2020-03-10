@@ -10,5 +10,11 @@
 <ion-content>
   <ion-searchbar placeholder="Buscar" 
                 showCancelButton="always" 
-                cancel-button-text="Cancelar"></ion-searchbar>
+                cancel-button-text="Cancelar">
+  </ion-searchbar>
+
+  <ion-item *ngFor= "let item of bookData">
+    {{item.title}}
+  </ion-item>
+              
 </ion-content>

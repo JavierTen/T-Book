@@ -8,6 +8,7 @@ import { BusquedaPageRoutingModule } from './busqueda-routing.module';
 
 import { BusquedaPage } from './busqueda.page';
 
+
 @NgModule({
   imports: [
     CommonModule,
