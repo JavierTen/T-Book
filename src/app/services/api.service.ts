@@ -11,7 +11,7 @@ import { retry, catchError } from 'rxjs/operators';
 export class ApiService {
  
   // API path
-  base_path = 'http://192.168.1.28/api/books';
+  base_path = 'http://192.168.1.28/api';
  
   constructor(private http: HttpClient) { }
  
@@ -51,24 +51,38 @@ export class ApiService {
   }
  
   // Get single Book data by ID
-  getItem(id): Observable<Book> {
+  getBook(id): Observable<Book> {
     return this.http
-      .get<Book>(this.base_path + '/' + id)
+      .get<Book>(this.base_path + '/books/show/' + id)
       .pipe(
         retry(2),
         catchError(this.handleError)
       )
   }
+
+  
+  // Get single Book data by ID
+  getCategorie(id): Observable<Book> {
+    return this.http
+      .get<Book>(this.base_path + '/categories/show/' + id)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
+
  
   // Get Books data
-  getList(): Observable<Book> {
+  getBooks(): Observable<Book> {
     return this.http
-      .get<Book>(this.base_path)
+      .get<Book>(this.base_path + '/books')
       .pipe(
         retry(2),
         catchError(this.handleError)
       )
   }
+
+
  
   // Update item by id
   updateItem(id, item): Observable<Book> {

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import {Book} from '../../models/book';
+
 
 @Component({
   selector: 'app-busqueda',
@@ -9,9 +12,11 @@ import { ApiService } from '../../services/api.service';
 export class BusquedaPage implements OnInit {
 
   bookData: any;
+ 
 
   constructor(
-    public apiService: ApiService
+    public apiService: ApiService,public activatedRoute: ActivatedRoute,
+    public router: Router,
   ) {
     this.bookData = [];
   }
@@ -22,10 +27,9 @@ export class BusquedaPage implements OnInit {
 
   getAllBooks() {
     //Get saved list of book
-    this.apiService.getList().subscribe(response => {
+    this.apiService.getBooks().subscribe(response => {
+      console.log(response);
       this.bookData = response;
     })
-    //console.log(this.bookData);
-    console.log("caacasd");
   }
 }
