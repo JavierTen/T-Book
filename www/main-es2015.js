@@ -438,7 +438,7 @@ module.exports = webpackAsyncContext;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-app>\n  <ion-router-outlet></ion-router-outlet>\n</ion-app>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-app>\r\n  <ion-router-outlet></ion-router-outlet>\r\n</ion-app>\r\n");
 
 /***/ }),
 
@@ -718,7 +718,7 @@ const routes = [
     },
     {
         path: 'busqueda',
-        loadChildren: () => __webpack_require__.e(/*! import() | pages-busqueda-busqueda-module */ "pages-busqueda-busqueda-module").then(__webpack_require__.bind(null, /*! ./pages/busqueda/busqueda.module */ "./src/app/pages/busqueda/busqueda.module.ts")).then(m => m.BusquedaPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-busqueda-busqueda-module */[__webpack_require__.e("common"), __webpack_require__.e("pages-busqueda-busqueda-module")]).then(__webpack_require__.bind(null, /*! ./pages/busqueda/busqueda.module */ "./src/app/pages/busqueda/busqueda.module.ts")).then(m => m.BusquedaPageModule)
     },
     {
         path: 'reserva',
@@ -735,6 +735,10 @@ const routes = [
     {
         path: 'configuracion',
         loadChildren: () => __webpack_require__.e(/*! import() | pages-configuracion-configuracion-module */ "pages-configuracion-configuracion-module").then(__webpack_require__.bind(null, /*! ./pages/configuracion/configuracion.module */ "./src/app/pages/configuracion/configuracion.module.ts")).then(m => m.ConfiguracionPageModule)
+    },
+    {
+        path: 'book/:id',
+        loadChildren: () => Promise.all(/*! import() | pages-book-book-module */[__webpack_require__.e("common"), __webpack_require__.e("pages-book-book-module")]).then(__webpack_require__.bind(null, /*! ./pages/book/book.module */ "./src/app/pages/book/book.module.ts")).then(m => m.BookPageModule)
     },
 ];
 let AppRoutingModule = class AppRoutingModule {
@@ -838,6 +842,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ "./node_modules/@ionic-native/status-bar/ngx/index.js");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+
 
 
 
@@ -853,7 +859,11 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
         declarations: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]],
         entryComponents: [],
-        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"].forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"]],
+        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"].forRoot(),
+            _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_9__["HttpClientModule"]
+        ],
         providers: [
             _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_6__["StatusBar"],
             _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_5__["SplashScreen"],
@@ -932,7 +942,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/jaten/Documents/ionic/tbook/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\JATEN\Documents\GitHub\T-Book\src\main.ts */"./src/main.ts");
 
 
 /***/ })

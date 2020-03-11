@@ -9,17 +9,20 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item>
-      {{title}}
-
+    <ion-card>
+      <b><ion-card-content>
+        {{title}}
+      </ion-card-content></b>  
+      <ion-card-content>
+        {{author}}
+      </ion-card-content>
+      <ion-card-content>
+        {{description}}
+      </ion-card-content>
       
-      {{inventarie}}
-
-      
-      {{categorie}}
-
-    </ion-item>
+    </ion-card>
+  
   </ion-list>
-  <ion-button expand="full" color="success">Tomar</ion-button>
-  <ion-button expand="full" color="warning">Reservar</ion-button>
+  <ion-button expand="full" color="success" routerLink='/tomar'>Tomar</ion-button>
+  <ion-button expand="full" color="warning" routerLink='/reserva'>Reservar</ion-button>
 </ion-content>
