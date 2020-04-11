@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="fondo">
     <ion-buttons slot="start">
       <ion-back-button text="Atrás" defaultHref="/"> </ion-back-button>
     </ion-buttons>
@@ -7,21 +7,13 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <ion-item *ngFor="let item of [1,1,1]">
-      <ion-label>
-        <h3>
-          <ion-skeleton-text width="50%"> </ion-skeleton-text>
-        </h3>
-        <p>
-          <ion-skeleton-text width="100%"></ion-skeleton-text>
-        </p>
-      </ion-label>
-      <ion-label>
-        <ion-skeleton-text width="20px"></ion-skeleton-text>
-      </ion-label>
-    </ion-item>
-  </ion-list>
+<ion-content color="fondo">
+  <ion-slides [options]="sliderOpts"
+              >
+    <ion-slide>
+      
+      <ion-label>No hay multas</ion-label>
 
+    </ion-slide>
+  </ion-slides>
 </ion-content>

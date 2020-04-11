@@ -12,4 +12,9 @@ export class MultaPage implements OnInit {
   ngOnInit() {
   }
 
+  sliderOpts = {
+    allowSlidePrev: false,
+    allowSlideNext: false
+  };
+
 }

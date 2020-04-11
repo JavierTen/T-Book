@@ -9,20 +9,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
   },
   {
-    path: 'categorias',
-    loadChildren: () => import('./pages/categorias/categorias.module').then( m => m.CategoriasPageModule)
-  },
-  {
     path: 'busqueda',
     loadChildren: () => import('./pages/busqueda/busqueda.module').then( m => m.BusquedaPageModule)
   },
   {
     path: 'reserva',
     loadChildren: () => import('./pages/reserva/reserva.module').then( m => m.ReservaPageModule)
-  },
-  {
-    path: 'historial',
-    loadChildren: () => import('./pages/historial/historial.module').then( m => m.HistorialPageModule)
   },
   {
     path: 'multa',
@@ -35,10 +27,15 @@ const routes: Routes = [
   {
     path: 'book/:id',
     loadChildren: () => import('./pages/book/book.module').then( m => m.BookPageModule)
-  },  {
+  },
+  {
     path: 'tomar',
     loadChildren: () => import('./pages/tomar/tomar.module').then( m => m.TomarPageModule)
+  },  {
+    path: 'escaner',
+    loadChildren: () => import('./pages/escaner/escaner.module').then( m => m.EscanerPageModule)
   },
+
 
 
 ];

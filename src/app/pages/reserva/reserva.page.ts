@@ -10,6 +10,12 @@ export class ReservaPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
+
+  sliderOpts = {
+    allowSlidePrev: false,
+    allowSlideNext: false
+  };
 
 }

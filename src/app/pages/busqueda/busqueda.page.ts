@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../services/api.service';
-import { ActivatedRoute, Router } from '@angular/router';
-import {Book} from '../../models/book';
-
+import { Item } from 'src/app/interfaces/interfaces';
+import { BookService } from 'src/app/services/book.service';
+import { DataLocalService } from 'src/app/services/data-local.service';
 
 @Component({
   selector: 'app-busqueda',
@@ -11,25 +10,32 @@ import {Book} from '../../models/book';
 })
 export class BusquedaPage implements OnInit {
 
-  bookData: any;
+  libro: Item[]=[];
+  libroBuscar = '';
+
+  constructor(private bookService : BookService, private dataLocalService: DataLocalService) {
+  }
+
  
-
-  constructor(
-    public apiService: ApiService,public activatedRoute: ActivatedRoute,
-    public router: Router,
-  ) {
-    this.bookData = [];
+  ngOnInit(){
+     
   }
 
-  ngOnInit() {
-    this.getAllBooks();
+
+  google(text){
+    this.bookService.getBook(text).subscribe(
+      resp  =>{   
+        console.log(resp);
+        this.libro.push (...resp.items);
+      }
+    )
+  }
+  buscar(event){
+    this.libroBuscar = event.detail.value;
+    var re = / /gi;
+    var text = this.libroBuscar.replace(re,"+");
+    this.google(text);
+
   }
 
-  getAllBooks() {
-    //Get saved list of book
-    this.apiService.getBooks().subscribe(response => {
-      console.log(response);
-      this.bookData = response;
-    })
-  }
 }

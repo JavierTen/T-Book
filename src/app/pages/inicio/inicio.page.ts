@@ -8,36 +8,30 @@ import { Component, OnInit } from '@angular/core';
 export class InicioPage implements OnInit {
 
   componentes: Componente[] = [
-    {
-      
-      name: 'Categorias',
-      redirectTo:'/categorias',
-      image: '/assets/imagen3.png'
-    },
     {     
       name: 'Busqueda',
-      redirectTo:'/busqueda',
-      image: '/assets/imagen6.png'
+      redirectTo:'/busqueda', 
+      image: '../assets/busq.png'
+    },
+    {     
+      name: 'Escanear',
+      redirectTo:'/escaner', 
+      image: '../assets/histo.png'
     },
     {     
       name: 'Reservas',
-      redirectTo:'/reserva',
-      image: '/assets/imagen2.png'
+      redirectTo:'/reserva', 
+      image: '../assets/reserva.png'
     },
     {     
       name: 'Multas',
       redirectTo:'/multa',
-      image: '/assets/imagen3.png'
-    },
-    {     
-      name: 'Historial',
-      redirectTo:'/historial',
-      image: '/assets/imagen5.png'
+      image: '../assets/multa.png'
     },
     {     
       name: 'Configuración',
       redirectTo:'/configuracion',
-      image: '/assets/imagen7.png' 
+      image: '../assets/config.png'
     },
   ];
 
@@ -47,8 +41,7 @@ export class InicioPage implements OnInit {
   }
 }
 
-  interface Componente {
-    
+  interface Componente {    
     name: string;
     redirectTo: string;
     image: string;

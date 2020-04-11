@@ -1,18 +1,23 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>T-Book</ion-title>
-  </ion-toolbar>
+<ion-header  >
+
 </ion-header>
 
-<ion-content>
-  <ion-grid>
+<ion-content color="fondo">
+  <ion-card>
+    <ion-img src ="/assets/home.jpg"></ion-img>
+  </ion-card>
+  
+  <ion-grid fixed>
     <ion-row>
       <ion-col size="6" *ngFor= "let c of componentes">
-        <ion-card [routerLink]="c.redirectTo">
-          <ion-img [src]="c.image"></ion-img>
-          <ion-card-header >
+        <ion-card [routerLink]="c.redirectTo"> 
+          <ion-card-content> 
+            <ion-img [src] ="c.image" style="width: 100px; height: 50px;" class="ion-text-center"></ion-img>
+          </ion-card-content>    
+          <ion-card-subtitle class="ion-text-center">
             {{c.name}}
-          </ion-card-header>
+          </ion-card-subtitle>
+          
         </ion-card>
       </ion-col>
     </ion-row>
