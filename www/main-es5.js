@@ -817,17 +817,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         });
       }
     }, {
-      path: 'categorias',
-      loadChildren: function loadChildren() {
-        return __webpack_require__.e(
-        /*! import() | pages-categorias-categorias-module */
-        "pages-categorias-categorias-module").then(__webpack_require__.bind(null,
-        /*! ./pages/categorias/categorias.module */
-        "./src/app/pages/categorias/categorias.module.ts")).then(function (m) {
-          return m.CategoriasPageModule;
-        });
-      }
-    }, {
       path: 'busqueda',
       loadChildren: function loadChildren() {
         return Promise.all(
@@ -847,17 +836,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         /*! ./pages/reserva/reserva.module */
         "./src/app/pages/reserva/reserva.module.ts")).then(function (m) {
           return m.ReservaPageModule;
-        });
-      }
-    }, {
-      path: 'historial',
-      loadChildren: function loadChildren() {
-        return __webpack_require__.e(
-        /*! import() | pages-historial-historial-module */
-        "pages-historial-historial-module").then(__webpack_require__.bind(null,
-        /*! ./pages/historial/historial.module */
-        "./src/app/pages/historial/historial.module.ts")).then(function (m) {
-          return m.HistorialPageModule;
         });
       }
     }, {
@@ -891,6 +869,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         /*! ./pages/book/book.module */
         "./src/app/pages/book/book.module.ts")).then(function (m) {
           return m.BookPageModule;
+        });
+      }
+    }, {
+      path: 'tomar',
+      loadChildren: function loadChildren() {
+        return __webpack_require__.e(
+        /*! import() | pages-tomar-tomar-module */
+        "pages-tomar-tomar-module").then(__webpack_require__.bind(null,
+        /*! ./pages/tomar/tomar.module */
+        "./src/app/pages/tomar/tomar.module.ts")).then(function (m) {
+          return m.TomarPageModule;
+        });
+      }
+    }, {
+      path: 'escaner',
+      loadChildren: function loadChildren() {
+        return __webpack_require__.e(
+        /*! import() | pages-escaner-escaner-module */
+        "pages-escaner-escaner-module").then(__webpack_require__.bind(null,
+        /*! ./pages/escaner/escaner.module */
+        "./src/app/pages/escaner/escaner.module.ts")).then(function (m) {
+          return m.EscanerPageModule;
         });
       }
     }];
@@ -1105,6 +1105,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _angular_common_http__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
     /*! @angular/common/http */
     "./node_modules/@angular/common/fesm2015/http.js");
+    /* harmony import */
+
+
+    var _ionic_storage__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+    /*! @ionic/storage */
+    "./node_modules/@ionic/storage/fesm2015/ionic-storage.js");
 
     var AppModule = function AppModule() {
       _classCallCheck(this, AppModule);
@@ -1113,7 +1119,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
       declarations: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]],
       entryComponents: [],
-      imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"].forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_9__["HttpClientModule"]],
+      imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"].forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_9__["HttpClientModule"], _ionic_storage__WEBPACK_IMPORTED_MODULE_10__["IonicStorageModule"].forRoot()],
       providers: [_ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_6__["StatusBar"], _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_5__["SplashScreen"], {
         provide: _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouteReuseStrategy"],
         useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicRouteStrategy"]

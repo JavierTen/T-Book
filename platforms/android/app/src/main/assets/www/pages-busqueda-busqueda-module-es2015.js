@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button text=\"Atrás\" defaultHref=\"/\"> </ion-back-button>\r\n    </ion-buttons>\r\n    <ion-title>Busqueda</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-searchbar placeholder=\"Buscar\" \r\n                showCancelButton=\"always\" \r\n                cancel-button-text=\"Cancelar\">\r\n  </ion-searchbar>\r\n\r\n  <ion-list *ngFor= \"let item of bookData\">\r\n    <ion-item routerLink='/book/{{item.id}}'> \r\n      <ion-label>{{item.title}}</ion-label>\r\n    </ion-item>\r\n  </ion-list>\r\n              \r\n</ion-content>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header [translucent]=\"true\">\r\n  <ion-toolbar color=\"fondo\">\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button text=\"Atrás\" defaultHref=\"/\"> </ion-back-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content [fullscreen]=\"true\" color=\"fondo\">\r\n\r\n  <ion-searchbar animated (ionChange)=\"buscar( $event )\" placeholder=\"Buscar\"></ion-searchbar>\r\n  <ion-card *ngFor=\"let book of libro\" routerLink='/book/{{book.id}}'>\r\n    <ion-card-content>\r\n      <ion-grid>\r\n        <ion-row>\r\n          <ion-col size=\"4\">\r\n            <ion-img *ngIf=\"book.volumeInfo.imageLinks.smallThumbnail\"\r\n              [src]=\"book.volumeInfo.imageLinks.smallThumbnail\">\r\n            </ion-img>\r\n          </ion-col>\r\n          <ion-col size=\"8\">\r\n            <h1>\r\n              {{book.volumeInfo.title}}\r\n            </h1>\r\n            <h2>\r\n              {{book.volumeInfo.authors}}\r\n            </h2>\r\n            <p>\r\n              {{book.volumeInfo.publisher}}\r\n            </p>\r\n            <p>\r\n              {{book.volumeInfo.publishedDate}}\r\n            </p>\r\n            <p *ngIf=\"book.volumeInfo.averageRating\">\r\n              <ion-icon name=\"star\"> </ion-icon>\r\n              {{book.volumeInfo.averageRating}}\r\n            </p>\r\n          </ion-col>\r\n        </ion-row>\r\n      </ion-grid>\r\n    </ion-card-content>\r\n  </ion-card>\r\n</ion-content>");
 
 /***/ }),
 
@@ -101,7 +101,7 @@ BusquedaPageModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2J1c3F1ZWRhL2J1c3F1ZWRhLnBhZ2Uuc2NzcyJ9 */");
+/* harmony default export */ __webpack_exports__["default"] = (".book-more {\n  font-size: 10px !important;\n  position: absolute;\n  right: -10px;\n  top: -10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvYnVzcXVlZGEvQzpcXFVzZXJzXFxKQVRFTlxcRG9jdW1lbnRzXFxHaXRIdWJcXFQtQm9vay9zcmNcXGFwcFxccGFnZXNcXGJ1c3F1ZWRhXFxidXNxdWVkYS5wYWdlLnNjc3MiLCJzcmMvYXBwL3BhZ2VzL2J1c3F1ZWRhL2J1c3F1ZWRhLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLDBCQUFBO0VBQ0Esa0JBQUE7RUFDQSxZQUFBO0VBQ0EsVUFBQTtBQ0NKIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvYnVzcXVlZGEvYnVzcXVlZGEucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmJvb2stbW9yZXtcclxuICAgIGZvbnQtc2l6ZTogMTBweCAhaW1wb3J0YW50O1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgcmlnaHQ6IC0xMHB4O1xyXG4gICAgdG9wOiAtMTBweDtcclxufSIsIi5ib29rLW1vcmUge1xuICBmb250LXNpemU6IDEwcHggIWltcG9ydGFudDtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICByaWdodDogLTEwcHg7XG4gIHRvcDogLTEwcHg7XG59Il19 */");
 
 /***/ }),
 
@@ -117,34 +117,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BusquedaPage", function() { return BusquedaPage; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _services_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/api.service */ "./src/app/services/api.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var src_app_services_book_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/book.service */ "./src/app/services/book.service.ts");
+/* harmony import */ var src_app_services_data_local_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/data-local.service */ "./src/app/services/data-local.service.ts");
 
 
 
 
 let BusquedaPage = class BusquedaPage {
-    constructor(apiService, activatedRoute, router) {
-        this.apiService = apiService;
-        this.activatedRoute = activatedRoute;
-        this.router = router;
-        this.bookData = [];
+    constructor(bookService, dataLocalService) {
+        this.bookService = bookService;
+        this.dataLocalService = dataLocalService;
+        this.libro = [];
+        this.libroBuscar = '';
     }
     ngOnInit() {
-        this.getAllBooks();
     }
-    getAllBooks() {
-        //Get saved list of book
-        this.apiService.getBooks().subscribe(response => {
-            console.log(response);
-            this.bookData = response;
+    google(text) {
+        this.bookService.getBook(text).subscribe(resp => {
+            console.log(resp);
+            this.libro.push(...resp.items);
         });
+    }
+    buscar(event) {
+        this.libroBuscar = event.detail.value;
+        var re = / /gi;
+        var text = this.libroBuscar.replace(re, "+");
+        this.google(text);
     }
 };
 BusquedaPage.ctorParameters = () => [
-    { type: _services_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
+    { type: src_app_services_book_service__WEBPACK_IMPORTED_MODULE_2__["BookService"] },
+    { type: src_app_services_data_local_service__WEBPACK_IMPORTED_MODULE_3__["DataLocalService"] }
 ];
 BusquedaPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -152,8 +155,7 @@ BusquedaPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./busqueda.page.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/busqueda/busqueda.page.html")).default,
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./busqueda.page.scss */ "./src/app/pages/busqueda/busqueda.page.scss")).default]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"],
-        _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_services_book_service__WEBPACK_IMPORTED_MODULE_2__["BookService"], src_app_services_data_local_service__WEBPACK_IMPORTED_MODULE_3__["DataLocalService"]])
 ], BusquedaPage);
 
 

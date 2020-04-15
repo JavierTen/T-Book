@@ -1,3 +1,11 @@
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
@@ -21,7 +29,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button text=\"Atrás\" defaultHref=\"/\"> </ion-back-button>\r\n    </ion-buttons>\r\n    <ion-title>Busqueda</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-searchbar placeholder=\"Buscar\" \r\n                showCancelButton=\"always\" \r\n                cancel-button-text=\"Cancelar\">\r\n  </ion-searchbar>\r\n\r\n  <ion-list *ngFor= \"let item of bookData\">\r\n    <ion-item routerLink='/book/{{item.id}}'> \r\n      <ion-label>{{item.title}}</ion-label>\r\n    </ion-item>\r\n  </ion-list>\r\n              \r\n</ion-content>\r\n";
+    __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar color=\"fondo\">\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button text=\"Atrás\" defaultHref=\"/\"> </ion-back-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content [fullscreen]=\"true\" color=\"fondo\">\r\n\r\n  <ion-searchbar animated (ionChange)=\"buscar( $event )\" placeholder=\"Buscar\"></ion-searchbar>\r\n  <ion-card *ngFor=\"let book of libro\" routerLink='/book/{{book.id}}'>\r\n    <ion-card-content>\r\n      <ion-grid>\r\n        <ion-row>\r\n          <ion-col size=\"4\">\r\n            <ion-img *ngIf=\"book.volumeInfo.imageLinks.smallThumbnail\"\r\n              [src]=\"book.volumeInfo.imageLinks.smallThumbnail\">\r\n            </ion-img>\r\n          </ion-col>\r\n          <ion-col size=\"8\">\r\n            <h1>\r\n              {{book.volumeInfo.title}}\r\n            </h1>\r\n            <h2>\r\n              {{book.volumeInfo.authors}}\r\n            </h2>\r\n            <p>\r\n              {{book.volumeInfo.publisher}}\r\n            </p>\r\n            <p>\r\n              {{book.volumeInfo.publishedDate}}\r\n            </p>\r\n            <p *ngIf=\"book.volumeInfo.averageRating\">\r\n              <ion-icon name=\"star\"> </ion-icon>\r\n              {{book.volumeInfo.averageRating}}\r\n            </p>\r\n          </ion-col>\r\n        </ion-row>\r\n      </ion-grid>\r\n    </ion-card-content>\r\n  </ion-card>\r\n</ion-content>";
     /***/
   },
 
@@ -174,7 +182,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2J1c3F1ZWRhL2J1c3F1ZWRhLnBhZ2Uuc2NzcyJ9 */";
+    __webpack_exports__["default"] = ".book-more {\n  font-size: 10px !important;\n  position: absolute;\n  right: -10px;\n  top: -10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvYnVzcXVlZGEvQzpcXFVzZXJzXFxKQVRFTlxcRG9jdW1lbnRzXFxHaXRIdWJcXFQtQm9vay9zcmNcXGFwcFxccGFnZXNcXGJ1c3F1ZWRhXFxidXNxdWVkYS5wYWdlLnNjc3MiLCJzcmMvYXBwL3BhZ2VzL2J1c3F1ZWRhL2J1c3F1ZWRhLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLDBCQUFBO0VBQ0Esa0JBQUE7RUFDQSxZQUFBO0VBQ0EsVUFBQTtBQ0NKIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvYnVzcXVlZGEvYnVzcXVlZGEucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmJvb2stbW9yZXtcclxuICAgIGZvbnQtc2l6ZTogMTBweCAhaW1wb3J0YW50O1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgcmlnaHQ6IC0xMHB4O1xyXG4gICAgdG9wOiAtMTBweDtcclxufSIsIi5ib29rLW1vcmUge1xuICBmb250LXNpemU6IDEwcHggIWltcG9ydGFudDtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICByaWdodDogLTEwcHg7XG4gIHRvcDogLTEwcHg7XG59Il19 */";
     /***/
   },
 
@@ -212,41 +220,49 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _services_api_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! ../../services/api.service */
-    "./src/app/services/api.service.ts");
+    var src_app_services_book_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! src/app/services/book.service */
+    "./src/app/services/book.service.ts");
     /* harmony import */
 
 
-    var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! @angular/router */
-    "./node_modules/@angular/router/fesm2015/router.js");
+    var src_app_services_data_local_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! src/app/services/data-local.service */
+    "./src/app/services/data-local.service.ts");
 
     var BusquedaPage = /*#__PURE__*/function () {
-      function BusquedaPage(apiService, activatedRoute, router) {
+      function BusquedaPage(bookService, dataLocalService) {
         _classCallCheck(this, BusquedaPage);
 
-        this.apiService = apiService;
-        this.activatedRoute = activatedRoute;
-        this.router = router;
-        this.bookData = [];
+        this.bookService = bookService;
+        this.dataLocalService = dataLocalService;
+        this.libro = [];
+        this.libroBuscar = '';
       }
 
       _createClass(BusquedaPage, [{
         key: "ngOnInit",
-        value: function ngOnInit() {
-          this.getAllBooks();
-        }
+        value: function ngOnInit() {}
       }, {
-        key: "getAllBooks",
-        value: function getAllBooks() {
+        key: "google",
+        value: function google(text) {
           var _this = this;
 
-          //Get saved list of book
-          this.apiService.getBooks().subscribe(function (response) {
-            console.log(response);
-            _this.bookData = response;
+          this.bookService.getBook(text).subscribe(function (resp) {
+            var _this$libro;
+
+            console.log(resp);
+
+            (_this$libro = _this.libro).push.apply(_this$libro, _toConsumableArray(resp.items));
           });
+        }
+      }, {
+        key: "buscar",
+        value: function buscar(event) {
+          this.libroBuscar = event.detail.value;
+          var re = / /gi;
+          var text = this.libroBuscar.replace(re, "+");
+          this.google(text);
         }
       }]);
 
@@ -255,11 +271,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     BusquedaPage.ctorParameters = function () {
       return [{
-        type: _services_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"]
+        type: src_app_services_book_service__WEBPACK_IMPORTED_MODULE_2__["BookService"]
       }, {
-        type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]
-      }, {
-        type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]
+        type: src_app_services_data_local_service__WEBPACK_IMPORTED_MODULE_3__["DataLocalService"]
       }];
     };
 
@@ -271,7 +285,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./busqueda.page.scss */
       "./src/app/pages/busqueda/busqueda.page.scss")).default]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_api_service__WEBPACK_IMPORTED_MODULE_2__["ApiService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])], BusquedaPage);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_services_book_service__WEBPACK_IMPORTED_MODULE_2__["BookService"], src_app_services_data_local_service__WEBPACK_IMPORTED_MODULE_3__["DataLocalService"]])], BusquedaPage);
     /***/
   }
 }]);
