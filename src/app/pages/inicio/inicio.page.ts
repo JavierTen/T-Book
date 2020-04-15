@@ -9,29 +9,29 @@ export class InicioPage implements OnInit {
 
   componentes: Componente[] = [
     {     
-      name: 'Busqueda',
+      name: 'Búsqueda',
       redirectTo:'/busqueda', 
-      image: '../assets/busq.png'
+      image: '../assets/2.png'
     },
     {     
-      name: 'Escanear',
+      name: 'Préstamos',
       redirectTo:'/escaner', 
-      image: '../assets/histo.png'
+      image: '../assets/3.png'
     },
     {     
       name: 'Reservas',
       redirectTo:'/reserva', 
-      image: '../assets/reserva.png'
+      image: '../assets/1.png'
     },
     {     
       name: 'Multas',
       redirectTo:'/multa',
-      image: '../assets/multa.png'
+      image: '../assets/4.png'
     },
     {     
       name: 'Configuración',
       redirectTo:'/configuracion',
-      image: '../assets/config.png'
+      image: '../assets/5.png'
     },
   ];
 
@@ -46,5 +46,7 @@ export class InicioPage implements OnInit {
     redirectTo: string;
     image: string;
   }
+
+
 
 
