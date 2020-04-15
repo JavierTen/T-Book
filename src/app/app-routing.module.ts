@@ -43,7 +43,11 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     redirectTo: 'login'
+  },  {
+    path: 'prestamos',
+    loadChildren: () => import('./pages/prestamos/prestamos.module').then( m => m.PrestamosPageModule)
   }
+
 
 
 

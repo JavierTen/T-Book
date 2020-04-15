@@ -5,7 +5,7 @@
 
     <ion-slide>
 
-      <form>
+      <form (ngSubmit)="login(fLogin)" #fLogin="ngForm">
         <ion-grid fixed>
 
           <ion-row>
@@ -20,13 +20,11 @@
               <ion-list>
 
                 <ion-item>
-                  <ion-label>Email</ion-label>
-                  <ion-input name="email" type="email" required></ion-input>
+                  <ion-input placeholder="Id" name="id" type="text" required></ion-input>
                 </ion-item>
 
                 <ion-item>
-                  <ion-label>Password</ion-label>
-                  <ion-input name="password" type="password" required></ion-input>
+                  <ion-input placeholder="Contraseña" name="password" type="password" required></ion-input>
                 </ion-item>
 
               </ion-list>
@@ -36,7 +34,7 @@
           <ion-row>
             <ion-col>
               <ion-button type="submit" color="tertiary" shape="round">
-                Login
+                Iniciar sesión
               </ion-button>
             </ion-col>
           </ion-row>
@@ -62,8 +60,8 @@
         <ion-row>
           <ion-col>
             <ion-slides>
-              <ion-slide *ngFor="let avatar of [1,1,1,1,1,1,1]">
-                <ion-img class="pick-avatar" src="/assets/avatars/av-1.png"></ion-img>
+              <ion-slide *ngFor="let avatar of avatars">
+                <img class="pick-avatar" [src]="avatar.img">
               </ion-slide>
             </ion-slides>
           </ion-col>
@@ -76,18 +74,27 @@
               <ion-list>
 
                 <ion-item>
-                  <ion-label>Email</ion-label>
-                  <ion-input name="email" type="email" required></ion-input>
+                  <ion-input placeholder="Nombres" name="nombre" type="text" required></ion-input>
+                </ion-item>
+
+                <ion-item>                
+                  <ion-input placeholder="Apellidos" name="apellido" type="text" required></ion-input>
                 </ion-item>
 
                 <ion-item>
-                  <ion-label>Nombre</ion-label>
-                  <ion-input name="nombre" type="text" required></ion-input>
+                  <ion-input placeholder="Facultad" name="apellido" type="text" required></ion-input>
                 </ion-item>
 
                 <ion-item>
-                  <ion-label>Password</ion-label>
-                  <ion-input name="password" type="password" required></ion-input>
+                  <ion-input placeholder="Email" name="email" type="email" required></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-input placeholder="Id" name="idEstudiante" facultad type="text" required></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-input placeholder="Contraseña" name="password" type="password" required></ion-input>
                 </ion-item>
 
               </ion-list>
