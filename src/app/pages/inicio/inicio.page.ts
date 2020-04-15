@@ -15,7 +15,7 @@ export class InicioPage implements OnInit {
     },
     {     
       name: 'Préstamos',
-      redirectTo:'/escaner', 
+      redirectTo:'/prestamos', 
       image: '../assets/3.png'
     },
     {     
@@ -28,11 +28,11 @@ export class InicioPage implements OnInit {
       redirectTo:'/multa',
       image: '../assets/4.png'
     },
-    {     
-      name: 'Configuración',
-      redirectTo:'/configuracion',
-      image: '../assets/5.png'
-    },
+    //{     
+    //  name: 'Configuración',
+    //  redirectTo:'/configuracion',
+    //  image: '../assets/5.png'
+    //},
   ];
 
   constructor() { }

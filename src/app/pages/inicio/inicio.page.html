@@ -4,7 +4,7 @@
 
 <ion-content color="fondo">
   <ion-card>
-    <ion-img src ="/assets/home1.jpg"></ion-img>
+    <ion-img src ="/assets/home1.png"></ion-img>
   </ion-card>
   
   <ion-grid fixed>
@@ -12,7 +12,7 @@
       <ion-col size="6" *ngFor= "let c of componentes">
         <ion-card [routerLink]="c.redirectTo"> 
           <ion-card-content> 
-            <ion-img [src] ="c.image" style="width: 100px; height: 50px;" class="ion-text-center"></ion-img>
+            <ion-img [src] ="c.image"  class="ion-text-center"></ion-img>
           </ion-card-content>    
           <ion-card-subtitle class="ion-text-center">
             {{c.name}}
