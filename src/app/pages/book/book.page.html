@@ -12,6 +12,10 @@
       <ion-img [src]="image" style="width: 170px; height: 260px;"> </ion-img>
     </ion-card>
   </div>
+  <div style=" display: flex; align-items: center; justify-content: center;">
+    <ion-button class="top-20" shape="round" center="middle" fill="outline" color="success" routerLink='/tomar'>Tomar</ion-button>
+    <ion-button class="top-20" shape="round" fill="solid" color="warning" routerLink='/reserva'>Reservar</ion-button>
+  </div>
   <h1 >
     {{title}}
   </h1>
@@ -31,8 +35,4 @@
     <ion-icon name="star"> </ion-icon>
     {{averageRating}}
   </p>
-
-
-  <ion-button expand="full" color="success" routerLink='/tomar'>Tomar</ion-button>
-  <ion-button expand="full" color="warning" routerLink='/reserva'>Reservar</ion-button>
 </ion-content>
