@@ -21,7 +21,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button text=\"Atrás\" defaultHref=\"/\"> </ion-back-button>\r\n    </ion-buttons>\r\n    <ion-title>Libro</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content padding>\r\n  <ion-list>\r\n    <ion-item>\r\n      {{title}}\r\n\r\n      \r\n      {{inventarie}}\r\n\r\n      \r\n      {{categorie}}\r\n\r\n    </ion-item>\r\n  </ion-list>\r\n  <ion-button expand=\"full\" color=\"success\">Tomar</ion-button>\r\n  <ion-button expand=\"full\" color=\"warning\">Reservar</ion-button>\r\n</ion-content>";
+    __webpack_exports__["default"] = "<ion-header>\r\n  <ion-toolbar color=\"fondo\">\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button text=\"Atrás\" defaultHref=\"/busqueda\"> </ion-back-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content padding color=\"fondo\" class=\"ion-padding\">\r\n  <div style=\" display: flex; align-items: center; justify-content: center;\">\r\n    <ion-card style=\"width: 150px; height: 200px; \">\r\n      <ion-img [src]=\"image\" style=\"width: 170px; height: 260px;\"> </ion-img>\r\n    </ion-card>\r\n  </div>\r\n  <h1 >\r\n    {{title}}\r\n  </h1>\r\n  <h6>\r\n    {{authors}}\r\n  </h6>\r\n  <p>\r\n    {{publisher}}\r\n  </p>\r\n  <p>\r\n    {{publishedDate}}\r\n  </p>\r\n  <p>\r\n    {{description}}\r\n  </p>\r\n  <p *ngIf=\"averageRating\">\r\n    <ion-icon name=\"star\"> </ion-icon>\r\n    {{averageRating}}\r\n  </p>\r\n\r\n\r\n  <ion-button expand=\"full\" color=\"success\" routerLink='/tomar'>Tomar</ion-button>\r\n  <ion-button expand=\"full\" color=\"warning\" routerLink='/reserva'>Reservar</ion-button>\r\n</ion-content>";
     /***/
   },
 
@@ -218,53 +218,42 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _services_api_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! ../../services/api.service */
-    "./src/app/services/api.service.ts");
+    var src_app_services_book_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! src/app/services/book.service */
+    "./src/app/services/book.service.ts");
+    /* harmony import */
+
+
+    var src_app_services_data_local_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! src/app/services/data-local.service */
+    "./src/app/services/data-local.service.ts");
 
     var BookPage = /*#__PURE__*/function () {
-      function BookPage(activatedRoute, router, apiService) {
+      function BookPage(activatedRoute, router, bookService, dataLocalService) {
         _classCallCheck(this, BookPage);
 
         this.activatedRoute = activatedRoute;
         this.router = router;
-        this.apiService = apiService;
+        this.bookService = bookService;
+        this.dataLocalService = dataLocalService;
       }
 
       _createClass(BookPage, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          this.getBook();
-          this.getCategorie();
-        }
-      }, {
-        key: "getBook",
-        value: function getBook() {
           var _this = this;
 
-          this.id = this.activatedRoute.snapshot.params["id"]; //get item details using id
-
-          this.apiService.getBook(this.id).subscribe(function (response) {
-            _this.id = response.id;
-            _this.title = response.title;
-            _this.author = response.author;
-            _this.signature = response.signature;
-            _this.inventarie = response.inventarie;
-            _this.edition = response.edition;
-            _this.barcode = response.barcode;
-            _this.description = response.description;
-            _this.categorie_id = response.categorie_id;
-            _this.facultie_id = response.facultie_id;
-            _this.report_id = response.report_id;
-
-            _this.apiService.getCategorie(_this.categorie_id).subscribe(function (response) {
-              _this.categorie = response.title;
-            });
+          this.id = this.activatedRoute.snapshot.params["id"];
+          this.bookService.getBookId(this.id).subscribe(function (resp) {
+            console.log(resp.id);
+            _this.title = resp.volumeInfo.title;
+            _this.authors = resp.volumeInfo.authors;
+            _this.publisher = resp.volumeInfo.publisher;
+            _this.publishedDate = resp.volumeInfo.publishedDate;
+            _this.description = resp.volumeInfo.description;
+            _this.image = resp.volumeInfo.imageLinks.smallThumbnail;
           });
         }
-      }, {
-        key: "getCategorie",
-        value: function getCategorie() {}
       }]);
 
       return BookPage;
@@ -276,7 +265,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]
       }, {
-        type: _services_api_service__WEBPACK_IMPORTED_MODULE_3__["ApiService"]
+        type: src_app_services_book_service__WEBPACK_IMPORTED_MODULE_3__["BookService"]
+      }, {
+        type: src_app_services_data_local_service__WEBPACK_IMPORTED_MODULE_4__["DataLocalService"]
       }];
     };
 
@@ -288,7 +279,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./book.page.scss */
       "./src/app/pages/book/book.page.scss")).default]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _services_api_service__WEBPACK_IMPORTED_MODULE_3__["ApiService"]])], BookPage);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], src_app_services_book_service__WEBPACK_IMPORTED_MODULE_3__["BookService"], src_app_services_data_local_service__WEBPACK_IMPORTED_MODULE_4__["DataLocalService"]])], BookPage);
     /***/
   }
 }]);

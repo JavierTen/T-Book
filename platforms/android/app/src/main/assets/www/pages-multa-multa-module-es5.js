@@ -21,7 +21,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button text=\"Atrás\" defaultHref=\"/\"> </ion-back-button>\r\n    </ion-buttons>\r\n    <ion-title>Multas</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-list>\r\n    <ion-item *ngFor=\"let item of [1,1,1]\">\r\n      <ion-label>\r\n        <h3>\r\n          <ion-skeleton-text width=\"50%\"> </ion-skeleton-text>\r\n        </h3>\r\n        <p>\r\n          <ion-skeleton-text width=\"100%\"></ion-skeleton-text>\r\n        </p>\r\n      </ion-label>\r\n      <ion-label>\r\n        <ion-skeleton-text width=\"20px\"></ion-skeleton-text>\r\n      </ion-label>\r\n    </ion-item>\r\n  </ion-list>\r\n\r\n</ion-content>\r\n";
+    __webpack_exports__["default"] = "<ion-header>\r\n  <ion-toolbar color=\"fondo\">\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button text=\"Atrás\" defaultHref=\"/\"> </ion-back-button>\r\n    </ion-buttons>\r\n    <ion-title>Multas</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content color=\"fondo\">\r\n  <ion-slides [options]=\"sliderOpts\"\r\n              >\r\n    <ion-slide>\r\n      \r\n      <ion-label>No hay multas</ion-label>\r\n\r\n    </ion-slide>\r\n  </ion-slides>\r\n</ion-content>\r\n";
     /***/
   },
 
@@ -174,7 +174,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL211bHRhL211bHRhLnBhZ2Uuc2NzcyJ9 */";
+    __webpack_exports__["default"] = "ion-slides, ion-slide {\n  width: 100%;\n  height: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvbXVsdGEvQzpcXFVzZXJzXFxKQVRFTlxcRG9jdW1lbnRzXFxHaXRIdWJcXFQtQm9vay9zcmNcXGFwcFxccGFnZXNcXG11bHRhXFxtdWx0YS5wYWdlLnNjc3MiLCJzcmMvYXBwL3BhZ2VzL211bHRhL211bHRhLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFdBQUE7RUFDQSxZQUFBO0FDQ0oiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9tdWx0YS9tdWx0YS5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tc2xpZGVzLCBpb24tc2xpZGUge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbn0iLCJpb24tc2xpZGVzLCBpb24tc2xpZGUge1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAxMDAlO1xufSJdfQ== */";
     /***/
   },
 
@@ -213,6 +213,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var MultaPage = /*#__PURE__*/function () {
       function MultaPage() {
         _classCallCheck(this, MultaPage);
+
+        this.sliderOpts = {
+          allowSlidePrev: false,
+          allowSlideNext: false
+        };
       }
 
       _createClass(MultaPage, [{

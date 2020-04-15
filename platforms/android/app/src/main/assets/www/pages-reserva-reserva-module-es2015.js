@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button text=\"Atrás\" defaultHref=\"/\"> </ion-back-button>\r\n    </ion-buttons>\r\n    <ion-title>Reservas</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-list>\r\n    <ion-item >\r\n      <ion-label>\r\n        <h3>\r\n          <ion-skeleton-text width=\"50%\"> </ion-skeleton-text>\r\n        </h3>\r\n        <p>\r\n          <ion-skeleton-text width=\"100%\"></ion-skeleton-text>\r\n        </p>\r\n      </ion-label>\r\n      <ion-label>\r\n        <ion-skeleton-text width=\"20px\"></ion-skeleton-text>\r\n      </ion-label>\r\n    </ion-item>\r\n  </ion-list>\r\n</ion-content>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar color=\"fondo\">\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button text=\"Atrás\" defaultHref=\"/\"> </ion-back-button>\r\n    </ion-buttons>\r\n    <ion-title>Reservas</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content color=\"fondo\">\r\n  <ion-slides [options]=\"sliderOpts\"\r\n              >\r\n    <ion-slide>\r\n      \r\n      <ion-label>No hay reservas</ion-label>\r\n\r\n    </ion-slide>\r\n  </ion-slides>\r\n</ion-content>\r\n");
 
 /***/ }),
 
@@ -101,7 +101,7 @@ ReservaPageModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL3Jlc2VydmEvcmVzZXJ2YS5wYWdlLnNjc3MifQ== */");
+/* harmony default export */ __webpack_exports__["default"] = ("ion-slides, ion-slide {\n  width: 100%;\n  height: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvcmVzZXJ2YS9DOlxcVXNlcnNcXEpBVEVOXFxEb2N1bWVudHNcXEdpdEh1YlxcVC1Cb29rL3NyY1xcYXBwXFxwYWdlc1xccmVzZXJ2YVxccmVzZXJ2YS5wYWdlLnNjc3MiLCJzcmMvYXBwL3BhZ2VzL3Jlc2VydmEvcmVzZXJ2YS5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxXQUFBO0VBQ0EsWUFBQTtBQ0NKIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvcmVzZXJ2YS9yZXNlcnZhLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1zbGlkZXMsIGlvbi1zbGlkZSB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGhlaWdodDogMTAwJTtcclxufSIsImlvbi1zbGlkZXMsIGlvbi1zbGlkZSB7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDEwMCU7XG59Il19 */");
 
 /***/ }),
 
@@ -120,7 +120,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let ReservaPage = class ReservaPage {
-    constructor() { }
+    constructor() {
+        this.sliderOpts = {
+            allowSlidePrev: false,
+            allowSlideNext: false
+        };
+    }
     ngOnInit() {
     }
 };

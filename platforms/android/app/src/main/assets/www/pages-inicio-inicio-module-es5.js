@@ -21,7 +21,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-title>T-Book</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-grid>\r\n    <ion-row>\r\n      <ion-col size=\"6\" *ngFor= \"let c of componentes\">\r\n        <ion-card [routerLink]=\"c.redirectTo\">\r\n          <ion-img [src]=\"c.image\"></ion-img>\r\n          <ion-card-header >\r\n            {{c.name}}\r\n          </ion-card-header>\r\n        </ion-card>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</ion-content>\r\n";
+    __webpack_exports__["default"] = "<ion-header  >\r\n\r\n</ion-header>\r\n\r\n<ion-content color=\"fondo\">\r\n  <ion-card>\r\n    <ion-img src =\"/assets/home.jpg\"></ion-img>\r\n  </ion-card>\r\n  \r\n  <ion-grid fixed>\r\n    <ion-row>\r\n      <ion-col size=\"6\" *ngFor= \"let c of componentes\">\r\n        <ion-card [routerLink]=\"c.redirectTo\"> \r\n          <ion-card-content> \r\n            <ion-img [src] =\"c.image\" style=\"width: 100px; height: 50px;\" class=\"ion-text-center\"></ion-img>\r\n          </ion-card-content>    \r\n          <ion-card-subtitle class=\"ion-text-center\">\r\n            {{c.name}}\r\n          </ion-card-subtitle>\r\n          \r\n        </ion-card>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n</ion-content>\r\n";
     /***/
   },
 
@@ -215,29 +215,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         _classCallCheck(this, InicioPage);
 
         this.componentes = [{
-          name: 'Categorias',
-          redirectTo: '/categorias',
-          image: '/assets/imagen3.png'
-        }, {
           name: 'Busqueda',
           redirectTo: '/busqueda',
-          image: '/assets/imagen6.png'
+          image: '../assets/busq.png'
+        }, {
+          name: 'Escanear',
+          redirectTo: '/escaner',
+          image: '../assets/histo.png'
         }, {
           name: 'Reservas',
           redirectTo: '/reserva',
-          image: '/assets/imagen2.png'
+          image: '../assets/reserva.png'
         }, {
           name: 'Multas',
           redirectTo: '/multa',
-          image: '/assets/imagen3.png'
-        }, {
-          name: 'Historial',
-          redirectTo: '/historial',
-          image: '/assets/imagen5.png'
+          image: '../assets/multa.png'
         }, {
           name: 'Configuración',
           redirectTo: '/configuracion',
-          image: '/assets/imagen7.png'
+          image: '../assets/config.png'
         }];
       }
 

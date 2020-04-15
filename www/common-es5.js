@@ -1098,23 +1098,23 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
 
   /***/
-  "./src/app/services/api.service.ts":
-  /*!*****************************************!*\
-    !*** ./src/app/services/api.service.ts ***!
-    \*****************************************/
+  "./src/app/services/book.service.ts":
+  /*!******************************************!*\
+    !*** ./src/app/services/book.service.ts ***!
+    \******************************************/
 
-  /*! exports provided: ApiService */
+  /*! exports provided: BookService */
 
   /***/
-  function srcAppServicesApiServiceTs(module, __webpack_exports__, __webpack_require__) {
+  function srcAppServicesBookServiceTs(module, __webpack_exports__, __webpack_require__) {
     "use strict";
 
     __webpack_require__.r(__webpack_exports__);
     /* harmony export (binding) */
 
 
-    __webpack_require__.d(__webpack_exports__, "ApiService", function () {
-      return ApiService;
+    __webpack_require__.d(__webpack_exports__, "BookService", function () {
+      return BookService;
     });
     /* harmony import */
 
@@ -1134,101 +1134,112 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/common/http */
     "./node_modules/@angular/common/fesm2015/http.js");
-    /* harmony import */
 
+    var BookService = /*#__PURE__*/function () {
+      function BookService(http) {
+        _classCallCheck(this, BookService);
 
-    var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! rxjs */
-    "./node_modules/rxjs/_esm2015/index.js");
-    /* harmony import */
+        this.http = http;
+        this.base_path = 'https://www.googleapis.com/books/v1/volumes?q=';
+        this.final_path = '& key= AIzaSyCwo7AKZ2Y3GMtKYEhSeZV66G_pOfKBmr4';
+        this.base_path_id = 'https://www.googleapis.com/books/v1/volumes/';
+      }
 
-
-    var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-    /*! rxjs/operators */
-    "./node_modules/rxjs/_esm2015/operators/index.js"); //api.service.ts
-
-
-    var ApiService = /*#__PURE__*/function () {
-      function ApiService(http) {
-        _classCallCheck(this, ApiService);
-
-        this.http = http; // API path
-
-        this.base_path = 'http://192.168.1.28/api'; // Http Options
-
-        this.httpOptions = {
-          headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
-            'Content-Type': 'application/json'
-          })
-        };
-      } // Handle API errors
-
-
-      _createClass(ApiService, [{
-        key: "handleError",
-        value: function handleError(error) {
-          if (error.error instanceof ErrorEvent) {
-            // A client-side or network error occurred. Handle it accordingly.
-            console.error('An error occurred:', error.error.message);
-          } else {
-            // The backend returned an unsuccessful response code.
-            // The response body may contain clues as to what went wrong,
-            console.error("Backend returned code ".concat(error.status, ", ") + "body was: ".concat(error.error));
-          } // return an observable with a user-facing error message
-
-
-          return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["throwError"])('Something bad happened; please try again later.');
+      _createClass(BookService, [{
+        key: "getBook",
+        value: function getBook(buscar) {
+          return this.http.get(this.base_path + buscar + this.final_path);
         }
       }, {
-        key: "createItem",
-        // Create a new item
-        value: function createItem(item) {
-          return this.http.post(this.base_path, JSON.stringify(item), this.httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
-        } // Get single Book data by ID
-
-      }, {
-        key: "getBook",
-        value: function getBook(id) {
-          return this.http.get(this.base_path + '/books/show/' + id).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
-        } // Get single Book data by ID
-
-      }, {
-        key: "getCategorie",
-        value: function getCategorie(id) {
-          return this.http.get(this.base_path + '/categories/show/' + id).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
-        } // Get Books data
-
-      }, {
-        key: "getBooks",
-        value: function getBooks() {
-          return this.http.get(this.base_path + '/books').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
-        } // Update item by id
-
-      }, {
-        key: "updateItem",
-        value: function updateItem(id, item) {
-          return this.http.put(this.base_path + '/' + id, JSON.stringify(item), this.httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
-        } // Delete item by id
-
-      }, {
-        key: "deleteItem",
-        value: function deleteItem(id) {
-          return this.http.delete(this.base_path + '/' + id, this.httpOptions).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(2), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
+        key: "getBookId",
+        value: function getBookId(id) {
+          return this.http.get(this.base_path_id + id);
         }
       }]);
 
-      return ApiService;
+      return BookService;
     }();
 
-    ApiService.ctorParameters = function () {
+    BookService.ctorParameters = function () {
       return [{
         type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
       }];
     };
 
-    ApiService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+    BookService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
       providedIn: 'root'
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])], ApiService);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])], BookService);
+    /***/
+  },
+
+  /***/
+  "./src/app/services/data-local.service.ts":
+  /*!************************************************!*\
+    !*** ./src/app/services/data-local.service.ts ***!
+    \************************************************/
+
+  /*! exports provided: DataLocalService */
+
+  /***/
+  function srcAppServicesDataLocalServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "DataLocalService", function () {
+      return DataLocalService;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _ionic_storage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @ionic/storage */
+    "./node_modules/@ionic/storage/fesm2015/ionic-storage.js");
+
+    var DataLocalService = /*#__PURE__*/function () {
+      function DataLocalService(storage) {
+        _classCallCheck(this, DataLocalService);
+
+        this.storage = storage;
+      }
+
+      _createClass(DataLocalService, [{
+        key: "guardarLibro",
+        value: function guardarLibro(libro) {
+          this.libros.shift(libro);
+          this.storage.set('historial', this.libros);
+        }
+      }, {
+        key: "cargarHistorial",
+        value: function cargarHistorial() {}
+      }]);
+
+      return DataLocalService;
+    }();
+
+    DataLocalService.ctorParameters = function () {
+      return [{
+        type: _ionic_storage__WEBPACK_IMPORTED_MODULE_2__["Storage"]
+      }];
+    };
+
+    DataLocalService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+      providedIn: 'root'
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_storage__WEBPACK_IMPORTED_MODULE_2__["Storage"]])], DataLocalService);
     /***/
   }
 }]);
