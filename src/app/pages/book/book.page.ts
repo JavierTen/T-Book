@@ -32,12 +32,6 @@ export class BookPage implements OnInit {
       this.publishedDate = resp.volumeInfo.publishedDate;
       this.description = resp.volumeInfo.description;
       this.image = resp.volumeInfo.imageLinks.smallThumbnail;
-      
-
-
-
-
-
 
     })
   }

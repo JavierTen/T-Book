@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { IonSlides } from '@ionic/angular';
+import { IonSlides, NavController } from '@ionic/angular';
+import { UsuarioService } from 'src/app/services/usuario.service';
+import { UiServiceService } from 'src/app/services/ui-service.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +11,7 @@ import { IonSlides } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
 
-  @ViewChild('slidePrincipal') slides: IonSlides;
+  @ViewChild('slidePrincipals') slides: IonSlides;
 
   avatars = [
     {
@@ -50,14 +52,31 @@ export class LoginPage implements OnInit {
     slidesPerView: 3.5
   };
 
-  constructor() { }
+  loginUser = {
+    idEstudiante: '',
+    password: ''
+  }
+
+  constructor(private usuarioService: UsuarioService, private navCtrl: NavController, private uiService: UiServiceService) { }
 
   ngOnInit() {
     this.slides.lockSwipes(true);
   }
 
-  login(fLogin: NgForm) {
-    console.log(fLogin.valid);
+  async login(fLogin: NgForm) {
+
+    if (fLogin.invalid) { return; };
+
+    const valido = await this.usuarioService.login(this.loginUser.idEstudiante, this.loginUser.password);
+
+    console.log(valido);
+
+    if (valido) {
+      this.navCtrl.navigateRoot('/inicio', { animated: true });
+    } else {
+      this.uiService.alertaInformativa('Usuario y contraseña invalidos')
+    }
+
   }
 
   registro(fRegistro: NgForm) {
@@ -69,16 +88,17 @@ export class LoginPage implements OnInit {
     avatar.seleccionado = true;
   }
 
-  mostrarRegistro(){
+  mostrarRegistro() {
     this.slides.lockSwipes(false);
     this.slides.slideTo(1);
     this.slides.lockSwipes(true);
   }
 
-  mostrarLogin(){
+  mostrarLogin() {
     this.slides.lockSwipes(false);
     this.slides.slideTo(0);
     this.slides.lockSwipes(true);
+
   }
 
 }

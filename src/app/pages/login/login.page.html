@@ -1,7 +1,7 @@
 <ion-content>
 
 
-  <ion-slides class="mainSlide" #slidePrincipal>
+  <ion-slides class="mainSlide" #slidePrincipals>
 
     <ion-slide>
 
@@ -21,11 +21,11 @@
               <ion-list>
 
                 <ion-item>
-                  <ion-input placeholder="Usuario" name="id" type="text" class="ion-text-center" required></ion-input>
+                  <ion-input placeholder="Usuario" name="id" type="text" class="ion-text-center" [(ngModel)]="loginUser.idEstudiante" required></ion-input>
                 </ion-item>
 
                 <ion-item>
-                  <ion-input placeholder="Contraseña" name="password" type="password" class="ion-text-center" required></ion-input>
+                  <ion-input placeholder="Contraseña" name="password" type="password" class="ion-text-center" [(ngModel)]="loginUser.password" required></ion-input>
                 </ion-item>
 
               </ion-list>

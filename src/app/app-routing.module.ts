@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: 'main', redirectTo: 'inicio', pathMatch: 'full' },
+  { path: '', redirectTo: 'inicio', pathMatch: 'full' },
   {
     path: 'inicio',
     loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
@@ -43,7 +43,8 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     redirectTo: 'login'
-  },  {
+  },
+  {
     path: 'prestamos',
     loadChildren: () => import('./pages/prestamos/prestamos.module').then( m => m.PrestamosPageModule)
   }
