@@ -7,6 +7,39 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding color="fondo" class="ion-padding">
+  <ion-card>
+    <ion-card-content>
+      <ion-grid>
+        <div style="text-align: center">
+          <h1>
+            <b>
+              Hola "nombre" 
+            </b>
+            <hr width="80%">
+            <h1>
+              Tomaras prestado el libro 
+            </h1>
+          </h1>
+          <hr width="80%">
+          <hr width="80%">
+          <ion-label>Fecha Préstamo</ion-label>
+          <ion-item>
+            <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="myDate"></ion-datetime>    
+          </ion-item>
+                       
+          <hr width="80%">
+          <ion-label>Fecha Devolución</ion-label>
+          <ion-item>
+            <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="myDate"></ion-datetime>
+          </ion-item>
+        </div>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>              
 
+
+  <div style=" display: flex; align-items: center; justify-content: center;">
+    <ion-button class="top-20" shape="round" fill="solid"  routerLink='/tomar'>Tomar</ion-button>
+  </div>  
 </ion-content>
