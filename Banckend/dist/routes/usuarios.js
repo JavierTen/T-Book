@@ -72,6 +72,7 @@ userRoutes.post('/create', function (req, res) {
         });
     });
 });
+//actualizar usuario
 userRoutes.post('/update', autenticacion_1.verificaToken, function (req, res) {
     var user = {
         nombre: req.body.nombre,
@@ -102,6 +103,13 @@ userRoutes.post('/update', autenticacion_1.verificaToken, function (req, res) {
             ok: true,
             token: tokenUsuario
         });
+    });
+});
+userRoutes.get('/', [autenticacion_1.verificaToken], function (req, res) {
+    var usuario = req.usuario;
+    res.json({
+        ok: true,
+        usuario: usuario
     });
 });
 exports.default = userRoutes;

@@ -9,7 +9,7 @@ var Token = /** @class */ (function () {
     }
     Token.getJwtToken = function (payload) {
         return jsonwebtoken_1.default.sign({
-            usuario: payload
+            usuario: payload,
         }, this.seed, { expiresIn: this.caducidad });
     };
     Token.comprobarToken = function (userToken) {
@@ -17,18 +17,16 @@ var Token = /** @class */ (function () {
         return new Promise(function (resolve, reject) {
             jsonwebtoken_1.default.verify(userToken, _this.seed, function (err, decoded) {
                 if (err) {
-                    //token invalido
                     reject();
                 }
                 else {
-                    // token valido
                     resolve(decoded);
                 }
             });
         });
     };
-    Token.seed = 'este-es-el-seed-de-la-aplicacion-tbook-2020-by-tenza-morales';
-    Token.caducidad = '30d';
+    Token.seed = "este-es-el-seed-de-mi-app-secreto";
+    Token.caducidad = "30d";
     return Token;
 }());
 exports.default = Token;

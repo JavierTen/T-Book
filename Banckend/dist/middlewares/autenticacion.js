@@ -5,17 +5,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var token_1 = __importDefault(require("../clases/token"));
 exports.verificaToken = function (req, res, next) {
-    var userToken = req.get('x-token') || '';
+    var userToken = req.get("x-token") || "";
     token_1.default.comprobarToken(userToken)
         .then(function (decoded) {
-        console.log('Decoded', decoded);
+        console.log("Decoded", decoded);
         req.usuario = decoded.usuario;
         next();
     })
         .catch(function (err) {
         res.json({
             ok: false,
-            mensaje: 'Token no es correcto'
+            mensaje: "Token no es correcto",
         });
     });
 };

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PrestamosService } from '../../services/prestamos.service';
+import { Prestamo } from 'src/app/interfaces/prestamosInterface';
 
 @Component({
   selector: 'app-prestamos',
@@ -7,14 +9,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrestamosPage implements OnInit {
 
-  constructor() { }
+  prestamos: Prestamo[] =[];
+
+  constructor(private prestamosService: PrestamosService) { }
 
   ngOnInit() {
+    this.getPrestamos();
+    this.getidLibros();
   }
   
   sliderOpts = {
     allowSlidePrev: false,
     allowSlideNext: false
   };
+
+  getPrestamos(){
+    this.prestamosService.getPrestamos()
+    .subscribe(resp => {
+      //console.log(resp.prestamo);
+      this.prestamos.push(...resp.prestamo);
+
+    })
+  }
+  getidLibros(){
+    //this.prestamos[0].idLibro;
+    console.log(this.prestamos);
+  }
+
 
 }
