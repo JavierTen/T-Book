@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { Storage } from "@ionic/storage";
 import { environment } from "../../environments/environment";
 import { Usuario } from "../interfaces/usuarioInterface";
+import { NavController } from '@ionic/angular';
 
 const URL = environment.url;
 
@@ -12,7 +13,7 @@ const URL = environment.url;
 export class UsuarioService {
   token: string = null;
 
-  constructor(private http: HttpClient, private storage: Storage) {}
+  constructor(private http: HttpClient, private storage: Storage, private navCtrl: NavController) {}
 
   login(idEstudiante: string, password: string) {
     const data = { idEstudiante, password };
@@ -31,6 +32,12 @@ export class UsuarioService {
           }
         });
     });
+  }
+
+  logout(){
+    this.token = null;
+    this.storage.clear();
+    this.navCtrl.navigateRoot('/login', { animated: true });
   }
 
   registro(usuario: Usuario) {

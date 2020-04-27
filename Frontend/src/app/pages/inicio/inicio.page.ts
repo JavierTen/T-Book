@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioService } from '../../services/usuario.service';
 
 @Component({
   selector: 'app-inicio',
@@ -35,9 +36,13 @@ export class InicioPage implements OnInit {
     //},
   ];
 
-  constructor() { }
+  constructor(private usuarioService: UsuarioService) { }
 
   ngOnInit() {
+  }
+
+  logout(){
+    this.usuarioService.logout();
   }
 }
 
@@ -46,6 +51,8 @@ export class InicioPage implements OnInit {
     redirectTo: string;
     image: string;
   }
+
+  
 
 
 

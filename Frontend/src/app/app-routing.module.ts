@@ -47,7 +47,11 @@ const routes: Routes = [
   {
     path: 'prestamos',
     loadChildren: () => import('./pages/prestamos/prestamos.module').then( m => m.PrestamosPageModule)
+  },  {
+    path: 'perfil',
+    loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
   }
+
 
 
 
