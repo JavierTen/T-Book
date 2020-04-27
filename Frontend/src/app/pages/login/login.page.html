@@ -63,7 +63,7 @@
             <ion-slides [options]="avartarSlide">
               <ion-slide *ngFor="let avatar of avatars">
                 <img class="pick-avatar" 
-                [src]="avatar.img"
+                src ="/assets/avatars/{{avatar.img}}"
                 [ngClass]="{'pick-avatar-seleccionado': avatar.seleccionado}"
                 (click)="seleccionarAvartar(avatar)">
               </ion-slide>
@@ -78,27 +78,27 @@
               <ion-list>
 
                 <ion-item>
-                  <ion-input placeholder="Nombres" name="nombre" type="text" required></ion-input>
+                  <ion-input placeholder="Nombres" name="nombre" type="text" [(ngModel)]="registerUser.nombre" required></ion-input>
                 </ion-item>
 
                 <ion-item>                
-                  <ion-input placeholder="Apellidos" name="apellido" type="text" required></ion-input>
+                  <ion-input placeholder="Apellidos" name="apellido" type="text" [(ngModel)]="registerUser.apellido" required></ion-input>
                 </ion-item>
 
                 <ion-item>
-                  <ion-input placeholder="Facultad" name="apellido" type="text" required></ion-input>
+                  <ion-input placeholder="Facultad" name="facultad" type="text" [(ngModel)]="registerUser.facultad" required></ion-input>
                 </ion-item>
 
                 <ion-item>
-                  <ion-input placeholder="Email" name="email" type="email" required></ion-input>
+                  <ion-input placeholder="Email" name="email" type="email" [(ngModel)]="registerUser.email" required></ion-input>
                 </ion-item>
 
                 <ion-item>
-                  <ion-input placeholder="Id" name="idEstudiante" facultad type="text" required></ion-input>
+                  <ion-input placeholder="Id" name="idEstudiante" facultad type="text" [(ngModel)]="registerUser.idEstudiante" required></ion-input>
                 </ion-item>
 
                 <ion-item>
-                  <ion-input placeholder="Contraseña" name="password" type="password" required></ion-input>
+                  <ion-input placeholder="Contraseña" name="password" type="password" [(ngModel)]="registerUser.password" required></ion-input>
                 </ion-item>
 
               </ion-list>

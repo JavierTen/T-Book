@@ -1,13 +1,15 @@
-export interface RespuestaPrestamos {
+export interface RespuestaPrestamos{
   ok: boolean;
   prestamo: Prestamo[];
 }
 
-export  interface Prestamo {
+export interface Prestamo {
   _id: string;
   idLibro: string;
+  tituloLibro: string;
+  imagenLibro: string;
   usuario: string;
-  created: string;
   FechaPrestamo: string;
   FechaEntrega: string;
+  __v: number;
 }

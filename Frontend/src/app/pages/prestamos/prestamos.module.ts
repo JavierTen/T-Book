@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { PrestamosPageRoutingModule } from './prestamos-routing.module';
 
 import { PrestamosPage } from './prestamos.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PrestamosPageRoutingModule
+    PrestamosPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [PrestamosPage]
 })

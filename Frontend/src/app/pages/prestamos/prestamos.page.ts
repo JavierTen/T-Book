@@ -14,8 +14,12 @@ export class PrestamosPage implements OnInit {
   constructor(private prestamosService: PrestamosService) { }
 
   ngOnInit() {
-    this.getPrestamos();
-    this.getidLibros();
+    this.prestamosService.getPrestamos()
+    .subscribe(resp => {
+      console.log(resp.prestamo);
+      this.prestamos.push(...resp.prestamo);
+
+    })
   }
   
   sliderOpts = {
@@ -23,18 +27,5 @@ export class PrestamosPage implements OnInit {
     allowSlideNext: false
   };
 
-  getPrestamos(){
-    this.prestamosService.getPrestamos()
-    .subscribe(resp => {
-      //console.log(resp.prestamo);
-      this.prestamos.push(...resp.prestamo);
-
-    })
-  }
-  getidLibros(){
-    //this.prestamos[0].idLibro;
-    console.log(this.prestamos);
-  }
-
-
+  
 }
