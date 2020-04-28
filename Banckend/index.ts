@@ -19,7 +19,7 @@ server.app.use( cors({origin: true, credentials: true}) );
 server.app.use('/user', userRoutes);
 server.app.use('/prestamo', prestamoRoutes);
 //conectar db
-mongoose.connect('mongodb://localhost:27017/tbook',
+mongoose.connect('mongodb+srv://root:toor@pruebatbook-msnju.mongodb.net/test?retryWrites=true&w=majority',
     { useNewUrlParser: true, useCreateIndex: true }, (err)=>{
         if(err) throw err;
 

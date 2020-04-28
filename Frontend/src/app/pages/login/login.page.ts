@@ -100,7 +100,7 @@ export class LoginPage implements OnInit {
     if (fRegistro.invalid){return;}
     const valido = await this.usuarioService.registro(this.registerUser);
     if (valido) {
-      this.navCtrl.navigateRoot("/inicio", { animated: true });
+     this.navCtrl.navigateRoot("/inicio", { animated: true });
     } else {
       this.uiService.alertaInformativa("El ID del estudiante ya existe registrado");
     }

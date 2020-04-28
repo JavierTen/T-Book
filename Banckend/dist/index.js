@@ -19,7 +19,7 @@ server.app.use(cors_1.default({ origin: true, credentials: true }));
 server.app.use('/user', usuarios_1.default);
 server.app.use('/prestamo', prestamo_1.default);
 //conectar db
-mongoose_1.default.connect('mongodb://localhost:27017/tbook', { useNewUrlParser: true, useCreateIndex: true }, function (err) {
+mongoose_1.default.connect('mongodb+srv://root:toor@pruebatbook-msnju.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true, useCreateIndex: true }, function (err) {
     if (err)
         throw err;
     console.log("Base de datos online");

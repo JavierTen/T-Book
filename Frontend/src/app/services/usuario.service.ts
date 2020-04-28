@@ -19,7 +19,7 @@ export class UsuarioService {
     const data = { idEstudiante, password };
     return new Promise((resolve) => {
       this.http
-        .post("http://localhost:3000/user/login", data)
+        .post(`${URL}/user/login`, data)
         .subscribe(async (resp) => {
           console.log(resp);
           if (resp["ok"]) {
@@ -43,7 +43,7 @@ export class UsuarioService {
   registro(usuario: Usuario) {
     return new Promise((resolve) => {
       this.http
-        .post("http://localhost:3000/user/create", usuario)
+        .post(`${URL}/user/create`, usuario)
         .subscribe((resp) => {
           console.log(resp);
           if (resp["ok"]) {

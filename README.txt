@@ -13,7 +13,8 @@ Estos pasos son para probar la aplicacion, solo esta codigo.
 -Haga un 'npm install' tanto a Backend como a Frontend
 -lenvate servicios
   Backend:
-    *Mongo.exe
+    *dentro de la carpeta 'Backend' presione Shift + click derecho y seleccione 'Abrir la ventana de PowerShell aquí', 
+     una vez se abra la ventena digite 'nodemon dist/'
   Frontend:
     *dentro de la carpeta 'Frontend' presione Shift + click derecho y seleccione 'Abrir la ventana de PowerShell aquí', 
      una vez se abra la ventena digite 'ionic serve'
