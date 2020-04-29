@@ -97,7 +97,9 @@ userRoutes.post('/update', autenticacion_1.verificaToken, function (req, res) {
             nombre: userDB.nombre,
             apellido: userDB.apellido,
             facultad: userDB.facultad,
-            avatar: userDB.avatar
+            avatar: userDB.avatar,
+            idEstudiante: userDB.idEstudiante,
+            email: userDB.email
         });
         res.json({
             ok: true,

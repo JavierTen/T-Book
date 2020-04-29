@@ -114,7 +114,9 @@ userRoutes.post('/update', verificaToken, (req: any, res: Response) => {
             nombre: userDB.nombre,
             apellido: userDB.apellido,
             facultad: userDB.facultad,
-            avatar: userDB.avatar
+            avatar: userDB.avatar,
+            idEstudiante: userDB.idEstudiante,
+            email: userDB.email
         });
 
         res.json({
