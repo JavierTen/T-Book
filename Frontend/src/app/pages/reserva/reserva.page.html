@@ -7,13 +7,57 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content color="fondo">
-  <ion-slides [options]="sliderOpts"
-              >
-    <ion-slide>
-      
-      <ion-label>No hay reservas</ion-label>
+<ion-content padding color="fondo"color="fondo" class="ion-padding">
+  <ion-card>
+    <ion-card-content>
+      <ion-grid>
+        <div style="text-align: center">
+          <h1>
+            <h1>
+              Tomaras el libro
+            </h1>
+            <hr width="80%">
+            <h2>
+              {{title}}
+            </h2>
 
-    </ion-slide>
-  </ion-slides>
+            <div style="display: flex; align-items: center; justify-content: center;">
+              <ion-img [src]="image" style="width: 120px; height: 120px;">
+              </ion-img>
+            </div>
+
+          </h1>
+          <hr width="80%">
+          <hr width="80%">
+          <ion-label>Fecha Préstamo</ion-label>
+          <br>
+          <!--b>
+            <ion-label color="dark">{{FPrestamo}}</ion-label>
+          </b> -->
+          
+
+
+          <ion-item>
+            <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="myDate"></ion-datetime>    
+          </ion-item> 
+
+          <hr width="80%">
+          <ion-label>Fecha Devolución</ion-label>
+          <br>
+          <b>
+            <ion-label color="dark">{{FEntrega}}</ion-label>
+          </b>
+
+          <!-- <ion-item>
+            <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="myDate"></ion-datetime>
+          </ion-item> -->
+        </div>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+
+  <div style=" display: flex; align-items: center; justify-content: center;">
+    <ion-button class="top-20" shape="round" fill="solid" (click)="tomar()">Tomar</ion-button>
+  </div>
 </ion-content>
