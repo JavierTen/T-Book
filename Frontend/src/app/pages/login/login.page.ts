@@ -53,8 +53,8 @@ export class LoginPage implements OnInit {
   };
 
   loginUser = {
-    idEstudiante: "",
-    password: "",
+    idEstudiante: "322165",
+    password: "000322165",
   };
 
   registerUser: Usuario = {

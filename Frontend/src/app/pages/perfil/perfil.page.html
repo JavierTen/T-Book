@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="fondo">
+  <ion-toolbar color="fondo" >
     <ion-buttons slot="start">
       <ion-back-button text="Atrás" defaultHref="/"> </ion-back-button>
     </ion-buttons>
@@ -8,12 +8,14 @@
 </ion-header>
 
 <ion-content color="fondo">
+  <br/>
+  <hr width="80%" />
   <ion-row class="top-20">
     <ion-col size="12" class="ion-text-center">
       <img src="assets/avatars/{{usuario.avatar}}" class="img-avatar" />
     </ion-col>
   </ion-row>
-
+  <hr width="80%" />
   <form>
     <ion-grid>
       <div style="text-align: center;">
@@ -35,3 +37,9 @@
     </ion-grid>
   </form>
 </ion-content>
+
+<ion-footer class="ion-no-border"  >
+  <ion-toolbar color="fondo"  >
+    <ion-img  src="https://i.ibb.co/1TWfqXC/banner.png" > </ion-img>
+  </ion-toolbar>
+</ion-footer>

@@ -12,22 +12,22 @@ export class InicioPage implements OnInit {
     {     
       name: 'Búsqueda',
       redirectTo:'/busqueda', 
-      image: '../assets/2.png'
+      image: 'https://i.ibb.co/nznDrZ7/2.png'
     },
     {     
       name: 'Préstamos',
       redirectTo:'/prestamos', 
-      image: '../assets/3.png'
+      image: 'https://i.ibb.co/5F6hNmc/3.png'
     },
     {     
       name: 'Reservas',
       redirectTo:'/reserva', 
-      image: '../assets/1.png'
+      image: 'https://i.ibb.co/KG5X59x/1.png'
     },
     {     
       name: 'Multas',
       redirectTo:'/multa',
-      image: '../assets/4.png'
+      image: 'https://i.ibb.co/JzR0zvC/4.png'
     },
     //{     
     //  name: 'Configuración',

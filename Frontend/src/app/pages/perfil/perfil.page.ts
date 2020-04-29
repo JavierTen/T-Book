@@ -19,4 +19,6 @@ export class PerfilPage implements OnInit {
     console.log(this.usuario);
   }
 
+  
+
 }
