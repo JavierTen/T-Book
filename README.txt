@@ -24,14 +24,4 @@ Estos pasos son para probar la aplicacion, solo esta codigo.
 -login desde la app:
   *idEstudiante
   *password
-  
-***********************************POSIBLE ERROR EN PRIMERA CARGA DE SERVICIO DE IONIC******************************************
-Si al momento de desplegar la app en el navegador obtiene lo siguiente en pantalla 'Cannot GET /'
 
--Abra el proyecto en un editor de codigo
--Entre a la siguiente ruta: 'Frontend/src/app/pages/login/login.page.ts'
--En la linea 14 '@ViewChild("slidePrincipals") slides: IonSlides;',modifique ("slidePrincipals") por ("slidePrincipal")
--guarde cambios
--vuelva a dejar ("slidePrincipals")
--nuevamente guarde cambios
--Regrese al navegador (En modo Herramientas para desarrolladores)
