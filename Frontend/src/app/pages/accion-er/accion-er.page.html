@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar color="fondo">
+    <ion-buttons slot="start">
+      <ion-back-button text="Atrás" defaultHref="/prestamos"> </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding color="fondo" class="ion-padding">
+  <ion-card>
+    <ion-card-content>
+      <ion-grid>
+        <div style="text-align: center;">
+          <h1>
+            <h2>
+              {{title}}
+            </h2>
+            <hr width="80%" />
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+              <ion-img [src]="image" style="width: 120px; height: 120px;">
+              </ion-img>
+            </div>
+          </h1>
+          <hr width="80%" />
+          <div style="text-align: center;">
+            <h6>
+              {{authors}}
+            </h6>
+          </div>
+          <div style="text-align: center;">
+            <p>
+              {{publisher}}
+            </p>
+          </div>
+          <div style="text-align: center;">
+            <p>
+              {{publishedDate}}
+            </p>
+          </div>
+        </div>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <div style="display: flex; align-items: center; justify-content: center;">
+    <ion-button
+      class="top-20"
+      shape="round"
+      center="middle"
+      fill="outline"
+      routerLink="/entrega/{{id}}"
+      >Entregar</ion-button
+    >
+    <ion-button
+      class="top-20"
+      shape="round"
+      fill="solid"
+      routerLink="/renovar/{{id}}"
+      >Renovar</ion-button
+    >
+  </div>
+</ion-content>

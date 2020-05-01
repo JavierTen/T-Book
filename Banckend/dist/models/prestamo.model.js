@@ -18,11 +18,17 @@ var prestamoSchema = new mongoose_1.Schema({
     FechaEntrega: {
         type: Date,
     },
+    FechaEntregado: {
+        type: Date,
+    },
     usuario: {
         type: mongoose_1.Schema.Types.ObjectId,
         ref: "Usuario",
         required: [true, "Debe existir una referencia a un usuario"],
     },
+    entregado: {
+        type: Boolean,
+    }
 });
 prestamoSchema.pre("save", function (next) {
     var fecha = new Date();

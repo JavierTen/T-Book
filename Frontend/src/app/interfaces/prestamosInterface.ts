@@ -11,5 +11,7 @@ export interface Prestamo {
   usuario: string;
   FechaPrestamo: string;
   FechaEntrega: string;
+  FechaEntregado: string;
+  entregado: boolean;
   __v: number;
 }

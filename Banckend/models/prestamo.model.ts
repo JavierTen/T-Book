@@ -17,11 +17,17 @@ const prestamoSchema = new Schema({
   FechaEntrega: {
     type: Date,
   },
+  FechaEntregado: {
+    type: Date,
+  },
   usuario: {
     type: Schema.Types.ObjectId,
     ref: "Usuario",
     required: [true, "Debe existir una referencia a un usuario"],
   },
+  entregado:{
+    type: Boolean,
+  }
 });
 
 prestamoSchema.pre<IPrestamo>("save", function (next) {
@@ -46,7 +52,9 @@ interface IPrestamo extends Document {
   imagenLibro: String;
   FechaPrestamo: Date;
   FechaEntrega: Date;
+  FechaEntregado:Date;
   usuario: String;
+  entregado: Boolean;
 }
 
 export const Prestamo = model<IPrestamo>("Prestamo", prestamoSchema);

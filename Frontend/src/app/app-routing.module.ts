@@ -12,7 +12,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/busqueda/busqueda.module').then( m => m.BusquedaPageModule)
   },
   {
-    path: 'reserva',
+    path: 'reserva/:id',
     loadChildren: () => import('./pages/reserva/reserva.module').then( m => m.ReservaPageModule)
   },
   {
@@ -47,10 +47,28 @@ const routes: Routes = [
   {
     path: 'prestamos',
     loadChildren: () => import('./pages/prestamos/prestamos.module').then( m => m.PrestamosPageModule)
-  },  {
+  },
+  {
     path: 'perfil',
     loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+  {
+    path: 'reservas',
+    loadChildren: () => import('./pages/reservas/reservas.module').then( m => m.ReservasPageModule)
+  },
+  {
+    path: 'renovar/:id',
+    loadChildren: () => import('./pages/renovar/renovar.module').then( m => m.RenovarPageModule)
+  },
+  {
+    path: 'entrega/:id',
+    loadChildren: () => import('./pages/entrega/entrega.module').then( m => m.EntregaPageModule)
+  },
+  {
+    path: 'accion/:id',
+    loadChildren: () => import('./pages/accion-er/accion-er.module').then( m => m.AccionERPageModule)
   }
+
 
 
 

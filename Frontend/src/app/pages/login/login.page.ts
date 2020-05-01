@@ -49,7 +49,7 @@ export class LoginPage implements OnInit {
   ];
 
   avartarSlide = {
-    slidesPerView: 3.5,
+    slidesPerView: 4.5,
   };
 
   loginUser = {

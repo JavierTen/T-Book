@@ -3,7 +3,6 @@
     <ion-buttons slot="start">
       <ion-back-button text="Atrás" defaultHref="/"> </ion-back-button>
     </ion-buttons>
-    <ion-title>Reservas</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -14,7 +13,7 @@
         <div style="text-align: center">
           <h1>
             <h1>
-              Tomaras el libro
+              Reservaras el libro
             </h1>
             <hr width="80%">
             <h2>
@@ -29,23 +28,23 @@
           </h1>
           <hr width="80%">
           <hr width="80%">
-          <ion-label>Fecha Préstamo</ion-label>
+          
           <br>
           <!--b>
             <ion-label color="dark">{{FPrestamo}}</ion-label>
           </b> -->
           
 
-
-          <ion-item>
-            <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="myDate"></ion-datetime>    
+          <ion-label>Fecha Reserva</ion-label>
+          <ion-item class="ion-text-center">
+            <ion-datetime class="ion-text-center" placeholder="DD/MM" displayFormat="DD/MM" (ionChange)="fechaReserva($event)" ></ion-datetime>    
           </ion-item> 
 
           <hr width="80%">
           <ion-label>Fecha Devolución</ion-label>
           <br>
           <b>
-            <ion-label color="dark">{{FEntrega}}</ion-label>
+            <ion-label>{{FEntrega}}</ion-label>
           </b>
 
           <!-- <ion-item>
@@ -58,6 +57,6 @@
 
 
   <div style=" display: flex; align-items: center; justify-content: center;">
-    <ion-button class="top-20" shape="round" fill="solid" (click)="tomar()">Tomar</ion-button>
+    <ion-button class="top-20" shape="round" fill="solid" (click)="tomar()">Reservar</ion-button>
   </div>
 </ion-content>

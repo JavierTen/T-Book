@@ -13,7 +13,7 @@ export class BusquedaPage implements OnInit {
   libro: Item[]=[];
   libroBuscar = '';
 
-  constructor(private bookService : BookService, private dataLocalService: DataLocalService) {
+  constructor(private bookService : BookService) {
   }
 
  

@@ -60,6 +60,36 @@ prestamoRoutes.get("/", [autenticacion_1.verificaToken], function (req, res) { r
         }
     });
 }); });
+// existePrestamo
+prestamoRoutes.get("/prestado", [autenticacion_1.verificaToken], function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    var body;
+    return __generator(this, function (_a) {
+        body = req.body;
+        prestamo_model_1.Prestamo.findOne({ usuario: req.usuario._id }, function (err, userDB) {
+            if (err)
+                throw err;
+            if (!userDB) {
+                return res.json({
+                    ok: false,
+                    mensaje: 'Usuario no es correctos'
+                });
+            }
+            if (userDB.idLibro === body.idLibro) {
+                res.json({
+                    ok: true,
+                    mensaje: 'Libro prestado'
+                });
+            }
+            else {
+                return res.json({
+                    ok: false,
+                    mensaje: 'Libro no prestado'
+                });
+            }
+        });
+        return [2 /*return*/];
+    });
+}); });
 // tomar libro
 prestamoRoutes.post("/", [autenticacion_1.verificaToken], function (req, res) {
     var body = req.body;
@@ -73,6 +103,27 @@ prestamoRoutes.post("/", [autenticacion_1.verificaToken], function (req, res) {
     })
         .catch(function (err) {
         res.json(err);
+    });
+});
+//update
+prestamoRoutes.post('/update', function (req, res) {
+    var prestamo = {
+        FechaEntregado: req.body.FechaEntregado,
+        entregado: req.body.entregado
+    };
+    prestamo_model_1.Prestamo.findOne({ prestamo: req.prestamo.idLibro }, function (err, prestamoDB) {
+        if (err)
+            throw err;
+        if (!prestamoDB) {
+            return res.json({
+                ok: true,
+                mensaje: 'No existe libro'
+            });
+        }
+    });
+    res.json({
+        ok: true,
+        prestamo: req.prestamo
     });
 });
 exports.default = prestamoRoutes;

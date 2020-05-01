@@ -21,7 +21,7 @@ export class InicioPage implements OnInit {
     },
     {     
       name: 'Reservas',
-      redirectTo:'/reserva', 
+      redirectTo:'/reservas', 
       image: 'https://i.ibb.co/KG5X59x/1.png'
     },
     {     

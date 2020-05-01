@@ -32,4 +32,22 @@ export class PrestamosService {
     });
 
   }
+
+
+  existePrestamo(idLibro: String ) {
+    const headers = new HttpHeaders({
+      'x-token': this.usuarioService.token
+    });
+    return new Promise( resolve => {
+      this.http.get(`${ URL }/prestamo/prestado`, {headers} )
+        .subscribe( async resp => {
+          console.log(resp);
+          if ( resp['ok'] ) {
+            resolve(true);
+          } else {
+            resolve(false);
+          }
+        });
+    });
+  }
 }

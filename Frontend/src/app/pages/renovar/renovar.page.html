@@ -1,10 +1,11 @@
-<ion-header >
+<ion-header>
   <ion-toolbar color="fondo">
     <ion-buttons slot="start">
-      <ion-back-button text="Atrás" defaultHref="/"> </ion-back-button>
+      <ion-back-button text="Atrás" defaultHref="/prestamos"> </ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
+
 <ion-content padding color="fondo"color="fondo" class="ion-padding">
   <ion-card>
     <ion-card-content>
@@ -12,30 +13,43 @@
         <div style="text-align: center">
           <h1>
             <h1>
-              Tomaras el libro
+              Renovaras el prestamo del libro
             </h1>
             <hr width="80%">
             <h2>
               {{title}}
             </h2>
+
             <div style="display: flex; align-items: center; justify-content: center;">
               <ion-img [src]="image" style="width: 120px; height: 120px;">
               </ion-img>
             </div>
+
           </h1>
           <hr width="80%">
           <hr width="80%">
-          <ion-label>Fecha Préstamo</ion-label>
+          <ion-label>Fecha Renovación</ion-label>
           <br>
           <b>
             <ion-label color="dark">{{FPrestamo}}</ion-label>
           </b>
+          
+
+
+          <!-- <ion-item>
+            <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="myDate"></ion-datetime>    
+          </ion-item> -->
+
           <hr width="80%">
           <ion-label>Fecha Devolución</ion-label>
           <br>
           <b>
             <ion-label color="dark">{{FEntrega}}</ion-label>
           </b>
+
+          <!-- <ion-item>
+            <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="myDate"></ion-datetime>
+          </ion-item> -->
         </div>
       </ion-grid>
     </ion-card-content>
@@ -43,6 +57,6 @@
 
 
   <div style=" display: flex; align-items: center; justify-content: center;">
-    <ion-button class="top-20" shape="round" fill="solid" (click)="tomar()">Tomar</ion-button>
+    <ion-button class="top-20" shape="round" fill="solid" (click)="tomar()">Renovar</ion-button>
   </div>
 </ion-content>
